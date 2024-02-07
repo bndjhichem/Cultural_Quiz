@@ -84,13 +84,22 @@ class _CulturalQuizState extends State<CulturalQuiz> {
           flex: 5,
           child: Column(
             children: [
-              Image.asset(appBrain.getQuestionImage()),
-              const SizedBox(
+              SizedBox(
+                height: 40,
+              ),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(20.0), 
+                child: Image.asset(
+                  appBrain.getQuestionImage(),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              SizedBox(
                 height: 20,
               ),
               Text(
                 appBrain.getQuestionText(),
-                style: GoogleFonts.rubik(
+                style: GoogleFonts.lato(
                   textStyle: const TextStyle(
                     color: Colors.black,
                     fontSize: 25,
@@ -117,7 +126,7 @@ class _CulturalQuizState extends State<CulturalQuiz> {
               },
               child: Text(
                 'True',
-                style: GoogleFonts.rubik(
+                style: GoogleFonts.lato(
                   textStyle: const TextStyle(
                     color: Colors.white,
                     fontSize: 25,
@@ -132,7 +141,7 @@ class _CulturalQuizState extends State<CulturalQuiz> {
             padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 50.0),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.deepOrange,
+                backgroundColor: Color.fromARGB(255, 233, 52, 52),
                 side: const BorderSide(width: 1),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
@@ -143,7 +152,7 @@ class _CulturalQuizState extends State<CulturalQuiz> {
               },
               child: Text(
                 'False',
-                style: GoogleFonts.rubik(
+                style: GoogleFonts.lato(
                   textStyle: const TextStyle(
                     color: Colors.white,
                     fontSize: 25,

@@ -14,36 +14,26 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SafeArea(
-        child: Scaffold(
-          backgroundColor: Colors.grey[200],
-          appBar: AppBar(
-            backgroundColor: Colors.white,
-            title: Text(
-              'Cultural Quiz',
-              style: GoogleFonts.getFont(
-                'Roboto',
-                textStyle: const TextStyle(
-                  color: Colors.blue,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'Open Sans',
-                  fontSize: 20,
-                ),
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          elevation: 1.0,
+          title: Text(
+            'Cultural Quiz',
+            style: GoogleFonts.getFont(
+              'Roboto',
+              textStyle: GoogleFonts.openSans(
+                color: Colors.blue,
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
               ),
             ),
-            centerTitle: true,
-            shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(15),
-                bottomRight: Radius.circular(15),
-              ),
-              side: BorderSide(color: Colors.blue, width: 2.0),
-            ),
           ),
-          body: const Padding(
-            padding: EdgeInsets.all(20.0),
-            child: CulturalQuiz(),
-          ),
+          centerTitle: true,
+        ),
+        body: const Padding(
+          padding: EdgeInsets.all(20.0),
+          child: CulturalQuiz(),
         ),
       ),
     );
